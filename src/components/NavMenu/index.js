@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import navMenuStyles from "./navMenu.module.css";
 
-class NavMenu extends Component {
+export default class NavMenu extends Component {
   render() {
     return (
       <nav className={navMenuStyles.navMenu}>
@@ -32,5 +32,3 @@ class NavMenu extends Component {
     );
   }
 }
-
-export default NavMenu;
