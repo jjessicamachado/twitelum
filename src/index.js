@@ -12,10 +12,21 @@ import "./assets/css/notificacao.css";
 import "./assets/css/novoTweet.css";
 // import './index.css';
 
-import HomePage from "./pages/HomePage";
+// import HomePage from "./pages/HomePage";
 import * as serviceWorker from "./serviceWorker";
 
-ReactDOM.render(<HomePage />, document.getElementById("root"));
+import { BrowserRouter } from "react-router-dom";
+import Roteamento from "./routes.js";
+import { NotificacaoContextProvider } from "./context/NotificacaoContext";
+
+ReactDOM.render(
+  <NotificacaoContextProvider>
+    <BrowserRouter>
+      <Roteamento></Roteamento>
+    </BrowserRouter>
+  </NotificacaoContextProvider>,
+  document.getElementById("root")
+);
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
