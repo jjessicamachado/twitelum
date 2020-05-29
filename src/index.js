@@ -1,5 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import store from "./store";
+import { Provider } from "react-redux";
 
 // CSSs Globais
 import "./assets/css/reset.css";
@@ -20,11 +22,13 @@ import Roteamento from "./routes.js";
 import { NotificacaoContextProvider } from "./context/NotificacaoContext";
 
 ReactDOM.render(
-  <NotificacaoContextProvider>
-    <BrowserRouter>
-      <Roteamento></Roteamento>
-    </BrowserRouter>
-  </NotificacaoContextProvider>,
+  <Provider store={store}>
+    <NotificacaoContextProvider>
+      <BrowserRouter>
+        <Roteamento></Roteamento>
+      </BrowserRouter>
+    </NotificacaoContextProvider>
+  </Provider>,
   document.getElementById("root")
 );
 
