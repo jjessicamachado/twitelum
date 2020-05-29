@@ -12,11 +12,13 @@ export class TweetsContainer extends Component {
   componentDidMount() {
     const store = this.context.store;
     store.subscribe(() => {
+      console.log("tweets", store.getState().tweets.data);
       this.setState({
         tweets: store.getState().tweets.data,
         tweetAtivoNoModal: store.getState().tweets.activeDataItem,
       });
     });
+    store.dispatch(TweetsThunkActions.carregaTweets());
   }
 
   removeTweet(idTweetQueVaiSerRemovido) {

@@ -3,17 +3,17 @@ import { TweetsService } from "../../../services/TweetsService";
 export const TweetsThunkActions = {
   carregaTweets: () => {
     return (dispatch) => {
-      dispatch({ type: "tweets/CARREGA " });
+      dispatch({ type: "tweets/CARREGA" });
 
       TweetsService.carrega()
         .then((tweets) => {
           dispatch({
-            type: "tweets/CARREGA_SUCESSO ",
+            type: "tweets/CARREGA_SUCESSO",
             payload: { data: tweets },
           });
         })
         .catch(() => {
-          dispatch({ type: "tweets/CARREGA_FALHOU " });
+          dispatch({ type: "tweets/CARREGA_FALHOU" });
         });
     };
   },
